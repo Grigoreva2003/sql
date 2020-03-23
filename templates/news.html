@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>{{title}}</title>
+    </head>
+    <body>
+        {% extends "base.html" %}
+
+        {% block content %}
+    <h2>Оформление каюты</h2>
+        <table border="1">
+   <tr>
+    <th>Цвут</th>
+    <th>Рисунок</th>
+   </tr>
+   <tr><td bgcolor={{color}}></td><td><img src={{age}}></td></tr>
+   <tr></tr>
+  </table>
+{% set num = 'Каюта №'%}
+    {% for item in list %}
+        {% if loop.first %}
+        <div>{{item}} - {{num}} {{loop.index}} - капитан корабля</div>
+        {% else %}
+        <div>{{item}} - {{num}} {{loop.index}}</div>
+           {% endif %}
+    {% endfor %}
+    {% endblock %}
+    </body>
+</html>
